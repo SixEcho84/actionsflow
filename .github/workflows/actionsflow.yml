@@ -31,11 +31,16 @@ jobs:
         run: echo "$SECRETS_CONTEXT"
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-      - name: view the secrets var WEBHOOK
+      - name: view the secrets var WEBHOOK_TEST
         shell: bash
         run: echo "$WEBHOOK"
         env:
-          WEBHOOK: ${{ secrets.webhook }}
+          WEBHOOK: ${{ secrets.WEBHOOK_TEST }}
+      - name: view the secrets var WEBHOOK_TEST_SIXECHO
+        shell: bash
+        run: echo "$WEBHOOK"
+        env:
+          WEBHOOK: ${{ secrets.WEBHOOK_TEST_SIXECHO }}
       - uses: actions/checkout@v2
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
