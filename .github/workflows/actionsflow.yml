@@ -26,21 +26,6 @@ jobs:
     name: Run
     concurrency: actionsflow
     steps:
-      - name: view the secrets context
-        shell: bash
-        run: echo "$SECRETS_CONTEXT"
-        env:
-          SECRETS_CONTEXT: ${{ toJson(secrets) }}
-      - name: view the secrets var WEBHOOK_TEST
-        shell: bash
-        run: echo "WEBHOOK_TEST"
-        env:
-          WEBHOOK_TEST: ${{ secrets.WEBHOOK_TEST }}
-      - name: view the secrets var WEBHOOK_TEST_SIXECHO
-        shell: bash
-        run: echo "$WEBHOOK_TEST_SIXECHO"
-        env:
-          WEBHOOK_TEST_SIXECHO: ${{ secrets.WEBHOOK_TEST_SIXECHO }}
       - uses: actions/checkout@v2
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
