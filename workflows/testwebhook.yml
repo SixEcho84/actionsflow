@@ -10,7 +10,7 @@ jobs:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
-          url: ${{ webhook.TEST }}
+          url: ${{ secrets.TEST }}
           method: POST
           body: |
             {
