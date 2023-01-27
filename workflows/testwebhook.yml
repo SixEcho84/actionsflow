@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
+        env:
+          webhookurl: ${{ webhook.TEST }}
         with:
           url: ${{ env.webhookurl }}
           method: POST
@@ -18,5 +20,3 @@ jobs:
               "avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
             }
-  env:
-    webhookurl: ${{ webhook.TEST }}
