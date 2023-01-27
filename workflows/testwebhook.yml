@@ -2,6 +2,8 @@ name: Send a HTTP Request when new RSS item is detected
 on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
+env:
+  webhook: ${{ vars.WEBHOOKTEST }}
 jobs:
   request:
     name: Request
@@ -10,7 +12,7 @@ jobs:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
-          url: ${{ vars.WEBHOOKTEST }}
+          url: $webhook
           method: POST
           body: |
             {
