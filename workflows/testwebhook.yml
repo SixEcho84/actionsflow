@@ -15,7 +15,7 @@ jobs:
           body: |
             {
               "username": "Top-Meldungen - Google News",
-              #"avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
             }
 
+#"avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
