@@ -9,10 +9,8 @@ jobs:
     steps:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
-        env:
-          webhookurl: ${{ webhook.TEST }}
         with:
-          url: ${{ env.webhookurl }}
+          url: ${{ webhook.TEST }}
           method: POST
           body: |
             {
