@@ -3,8 +3,6 @@ on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
 jobs:
-  env:
-    webhookurl: ${{ webhook.TEST }}
   request:
     name: Request
     runs-on: ubuntu-latest
@@ -20,3 +18,5 @@ jobs:
               "avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
             }
+  env:
+    webhookurl: ${{ webhook.TEST }}
