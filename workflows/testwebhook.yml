@@ -1,0 +1,20 @@
+name: Send a HTTP Request when new RSS item is detected
+on:
+  rss:
+    url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request      
+        uses: actionsflow/axios@main
+        with:
+          url: https://discord.com/api/webhooks/971868502904426576/3RJKX5mEuoHdXDfvlKrEcehC0AknWxOhayPljOv1StIkW-N8H-qlh-ecCukOsVmd0T4E
+          method: POST
+          body: |
+            {
+              "username": "SimRacing Unlimited",
+              "avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+            }
