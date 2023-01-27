@@ -7,6 +7,12 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
+      - name: view the secrets context
+        shell: bash
+        run: echo "$SECRETS_CONTEXT"
+        env:
+          SECRETS_CONTEXT: ${{ toJson(secrets) }}
+
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
