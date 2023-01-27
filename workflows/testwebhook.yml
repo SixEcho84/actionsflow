@@ -12,7 +12,7 @@ jobs:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
-          url: $webhook
+          url: ${{ env.webhook }}
           method: POST
           body: |
             {
