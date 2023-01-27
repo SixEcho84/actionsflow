@@ -10,7 +10,7 @@ jobs:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
-          url: https://discord.com/api/webhooks/971868502904426576/3RJKX5mEuoHdXDfvlKrEcehC0AknWxOhayPljOv1StIkW-N8H-qlh-ecCukOsVmd0T4E
+          url: ${{ vars.WEBHOOKTEST }}
           method: POST
           body: |
             {
