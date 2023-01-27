@@ -35,7 +35,7 @@ jobs:
         shell: bash
         run: echo "$WEBHOOK"
         env:
-          WEBHOOK: ${{ secrets.WEBHOOK_TEST }}
+          WEBHOOK: ${{ secrets.webhook }}
       - uses: actions/checkout@v2
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
