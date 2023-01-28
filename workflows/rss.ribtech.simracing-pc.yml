@@ -1,7 +1,7 @@
 name: Send a HTTP Request when new RSS item is detected
 on:
   rss:
-    url: https://simracing-unlimited.com/de/feed
+    url: https://simracing-pc.de/feed
     config:
       loglevel: debug
       
