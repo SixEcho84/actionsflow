@@ -1,5 +1,5 @@
 name: Send a HTTP Request when new RSS item is detected - Test RSS
-on:
+#on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
     parserConfig:
