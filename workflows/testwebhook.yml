@@ -4,8 +4,10 @@ on:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
     config:
       customFields:
-        item: source
-      loglevel: debug
+        item:
+          - source
+      loglevel: 
+        - debug
       
 jobs:
   request:
