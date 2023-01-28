@@ -1,4 +1,4 @@
-name: Send a HTTP Request when new RSS item is detected
+name: Send a HTTP Request when new RSS item is detected - RSS ACC Blog
 on:
   rss:
     url: https://ac-competizione.de/feed
