@@ -16,7 +16,7 @@ jobs:
     steps:
       #- name: Echo RSS OUTPUT
       #  run: echo "${{ toJSON(on.rss.outputs) }}"
-      - name: Make a HTTP Request      
+      - name: Make a HTTP Request - RSS TEST
         uses: actionsflow/axios@main
         with:
           url: ${{secrets.WEBHOOK_TEST}}
@@ -27,5 +27,6 @@ jobs:
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
               
             }
-
+    config:
+      loglevel: debug
 #"avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
