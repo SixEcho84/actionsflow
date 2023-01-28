@@ -1,4 +1,4 @@
-name: Send a HTTP Request when new RSS item is detected
+name: Send a HTTP Request when new RSS item is detected - RSS Flightsim.to
 on:
   rss:
     url: https://de.flightsim.to/rss
