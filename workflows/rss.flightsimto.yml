@@ -2,6 +2,10 @@ name: Send a HTTP Request when new RSS item is detected
 on:
   rss:
     url: https://de.flightsim.to/rss
+    parserConfig:
+      customFields:
+        item:
+          - category
     config:
       loglevel: debug
       
