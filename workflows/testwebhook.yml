@@ -1,4 +1,6 @@
-name: Send a HTTP Request when new RSS item is detected
+env:
+  RSS_NAME: Test RSS
+name: Send a HTTP Request when new RSS item is detected - ${{ env.RSS_NAME }}
 on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
@@ -14,9 +16,7 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
-      #- name: Echo RSS OUTPUT
-      #  run: echo "${{ toJSON(on.rss.outputs) }}"
-      - name: Make a HTTP Request - RSS TEST
+      - name: Make a HTTP Request - RSS ${{ env.RSS_NAME }}
         uses: actionsflow/axios@main
         with:
           url: ${{secrets.WEBHOOK_TEST}}
