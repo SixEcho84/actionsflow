@@ -1,4 +1,6 @@
-name: Send a HTTP Request when new RSS item is detected - RSS ACC Blog
+env:
+  RSS_NAME: ACC Blog
+name: Send a HTTP Request when new RSS item is detected - RSS ${{ env.RSS_NAME }}
 on:
   rss:
     url: https://ac-competizione.de/feed
@@ -10,14 +12,14 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
-      - name: Make a HTTP Request - RSS ACC Blog
+      - name: Make a HTTP Request - RSS ${{ env.RSS_NAME }}
         uses: actionsflow/axios@main
         with:
           url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
           method: POST
           body: |
             {
-              "username": "ACC Blog",
+              "username": "${{ env.RSS_NAME }}",
               "avatar_url": "https://www.minuitdouze.com/wp-content/uploads/87879923_2295996824034104_4581649568369737728_n.png",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
               
