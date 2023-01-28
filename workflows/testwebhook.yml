@@ -20,7 +20,7 @@ jobs:
           body: |
             {
               "username": "Top-Meldungen - Google News",
-              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>\n<<<${{on.rss.outputs.source}}>>>"
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>\n<<<${{on.rss.outputs}}>>>"
               
             }
 
