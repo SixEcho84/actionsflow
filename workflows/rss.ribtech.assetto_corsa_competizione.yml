@@ -1,0 +1,24 @@
+name: Send a HTTP Request when new RSS item is detected - Assetto Corsa Competizione
+on:
+  rss:
+    url: https://assettocorsa.it/competizione/feed
+    config:
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - RSS Assetto Corsa Competizione
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
+          method: POST
+          body: |
+            {
+              "username": "Assetto Corsa Competizione",
+              "avatar_url": "https://www.minuitdouze.com/wp-content/uploads/87879923_2295996824034104_4581649568369737728_n.png",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              
+            }
