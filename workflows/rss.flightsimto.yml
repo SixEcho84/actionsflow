@@ -10,7 +10,7 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
-      - name: Make a HTTP Request      
+      - name: Make a HTTP Request - RSS Flightsim.to
         uses: actionsflow/axios@main
         with:
           url: ${{secrets.WEBHOOK_SIXECHO_FLIGHTSIMTO}}
