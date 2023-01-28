@@ -2,10 +2,11 @@ name: Send a HTTP Request when new RSS item is detected
 on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
-    config:
+    parserConfig:
       customFields:
         item:
           - source
+    config:
       loglevel: 
         - debug
       
