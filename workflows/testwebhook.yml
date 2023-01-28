@@ -19,7 +19,7 @@ jobs:
         uses: actionsflow/axios@main
         with:
           url: ${{secrets.WEBHOOK_TEST}}
-         method: POST
+          method: POST
           body: |
             {
               "username": "${{on.rss.outputs.source}}",
