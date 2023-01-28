@@ -1,7 +1,7 @@
 name: Send a HTTP Request when new RSS item is detected - Assetto Corsa Competizione
 on:
   rss:
-    url: https://assettocorsa.it/competizione/feed
+    url: https://www.assettocorsa.it/competizione/feed
     config:
       loglevel: debug
       
