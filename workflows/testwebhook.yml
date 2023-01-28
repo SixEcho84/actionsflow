@@ -2,6 +2,9 @@ name: Send a HTTP Request when new RSS item is detected
 on:
   rss:
     url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
+    config:
+      loglevel: debug
+      
 jobs:
   request:
     name: Request
@@ -15,7 +18,8 @@ jobs:
           body: |
             {
               "username": "Top-Meldungen - Google News",
-              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>\n<<<${{on.rss.outputs.source}}>>>"
+              
             }
 
 #"avatar_url": "https://pbs.twimg.com/profile_images/1316315799691431937/78yP9Jiu_400x400.jpg",
