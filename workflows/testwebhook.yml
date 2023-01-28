@@ -7,8 +7,7 @@ on:
         item:
           - source
     config:
-      loglevel: 
-        - debug
+      loglevel: debug
       
 jobs:
   request:
