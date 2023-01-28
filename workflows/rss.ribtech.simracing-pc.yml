@@ -1,0 +1,23 @@
+name: Send a HTTP Request when new RSS item is detected
+on:
+  rss:
+    url: https://simracing-unlimited.com/de/feed
+    config:
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - RSS Simracing-PC
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
+          method: POST
+          body: |
+            {
+              "username": "Simracing-PC",
+              "avatar_url": "https://simracing-pc.de/wp-content/uploads/2021/01/cropped-favicon-32x32.jpg",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+            }
