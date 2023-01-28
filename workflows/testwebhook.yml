@@ -12,6 +12,8 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
+      - name: Echo RSS OUTPUT
+        run: echo "${{ toJSON(on.rss.outputs) }}"
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
@@ -20,7 +22,7 @@ jobs:
           body: |
             {
               "username": "Top-Meldungen - Google News",
-              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>\n<<<${{on.rss.outputs}}>>>"
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>\n${{on.rss.outputs}}"
               
             }
 
