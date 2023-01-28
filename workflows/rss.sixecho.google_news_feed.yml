@@ -1,0 +1,29 @@
+name: Send a HTTP Request when new RSS item is detected - Google News Feed
+on:
+  rss:
+    url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
+    parserConfig:
+      customFields:
+        item:
+          - source
+    config:
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - RSS Google News Feed
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_SIXECHO_GOOGLENEWSFEED}}
+          method: POST
+          body: |
+            {
+              "username": "${{on.rss.outputs.source}}",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              
+            }
+    config:
+      loglevel: debug
