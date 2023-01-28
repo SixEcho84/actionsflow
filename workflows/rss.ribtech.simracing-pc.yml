@@ -1,4 +1,4 @@
-name: Send a HTTP Request when new RSS item is detected
+name: Send a HTTP Request when new RSS item is detected - Simracing-PC
 on:
   rss:
     url: https://simracing-pc.de/feed
