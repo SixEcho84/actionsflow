@@ -23,7 +23,7 @@ jobs:
           method: POST
           body: |
             {
-              "username": ${{on.rss.outputs.source}},
+              "username": "${{on.rss.outputs.source}}",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
               
             }
