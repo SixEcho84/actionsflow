@@ -12,8 +12,8 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
-      - name: Echo RSS OUTPUT
-        run: echo "${{ toJSON(on.rss.outputs) }}"
+      #- name: Echo RSS OUTPUT
+      #  run: echo "${{ toJSON(on.rss.outputs) }}"
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
