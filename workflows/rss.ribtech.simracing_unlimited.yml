@@ -3,6 +3,7 @@ on:
   rss:
     url: https://simracing-unlimited.com/de/feed
     config:
+      active: false
       loglevel: debug
       
 jobs:
