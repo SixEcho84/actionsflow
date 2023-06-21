@@ -1,0 +1,23 @@
+name: Send a HTTP Request when new RSS item is detected - FSNews24
+on:
+  rss:
+    url: https://flightnews24.de/feed
+    config:
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - FSNews24
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_SIXECHO_FSNEWS}}
+          method: POST
+          body: |
+            {
+              "username": "FSNews24",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              
+            }
