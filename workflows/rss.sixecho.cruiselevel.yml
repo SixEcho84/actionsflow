@@ -1,0 +1,26 @@
+rss.sixecho.cruiselevel.yml
+
+
+name: Send a HTTP Request when new RSS item is detected - cruiselevel
+on:
+  rss:
+    url: https://cruiselevel.de/feed
+    config:
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - cruiselevel
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_SIXECHO_FSNEWS}}
+          method: POST
+          body: |
+            {
+              "username": "cruiselevel",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              
+            }
