@@ -1,6 +1,3 @@
-rss.sixecho.cruiselevel.yml
-
-
 name: Send a HTTP Request when new RSS item is detected - cruiselevel
 on:
   rss:
