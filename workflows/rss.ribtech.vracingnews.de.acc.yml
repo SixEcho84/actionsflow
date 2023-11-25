@@ -3,7 +3,7 @@ on:
   rss:
     url: https://vracingnews.de/index.php?article-feed/77/
     config:
-      active: false
+      active: true
       loglevel: debug
       
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - name: Make a HTTP Request - RSS SimRacing Unlimited
         uses: actionsflow/axios@main
         with:
-          url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
+          url: ${{secrets.WEBHOOK_TEST}}
           method: POST
           body: |
             {
