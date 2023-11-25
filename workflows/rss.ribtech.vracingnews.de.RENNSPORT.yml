@@ -14,11 +14,11 @@ jobs:
       - name: Make a HTTP Request - RSS vRacingnews RENNSPORT
         uses: actionsflow/axios@main
         with:
-          url: ${{secrets.WEBHOOK_SIXECHO_RIBTECH_TEST}}
+          url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
           method: POST
           body: |
             {
-              "username": "RENNSPORT - vRacingnews",
+              "username": "vRacingnews",
               "avatar_url": "https://vracingnews.de/images/style-11/apple-touch-icon.png",
               "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
               
