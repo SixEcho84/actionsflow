@@ -14,7 +14,7 @@ jobs:
       - name: Make a HTTP Request - RSS vRacingnews ACC
         uses: actionsflow/axios@main
         with:
-          url: ${{secrets.WEBHOOK_SIXECHO_RIBTECH_TEST}}
+          url: ${{secrets.WEBHOOK_RIBTECH_EXTERNNEWS}}
           method: POST
           body: |
             {
