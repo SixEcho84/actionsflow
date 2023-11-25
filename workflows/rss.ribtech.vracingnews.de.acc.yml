@@ -11,10 +11,10 @@ jobs:
     name: Request
     runs-on: ubuntu-latest
     steps:
-      - name: Make a HTTP Request - RSS SimRacing Unlimited
+      - name: Make a HTTP Request - RSS vRacingnews ACC
         uses: actionsflow/axios@main
         with:
-          url: ${{secrets.WEBHOOK_TEST}}
+          url: ${{secrets.WEBHOOK_SIXECHO_RIBTECH_TEST}}
           method: POST
           body: |
             {
