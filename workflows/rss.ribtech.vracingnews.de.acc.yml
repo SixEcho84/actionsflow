@@ -1,4 +1,4 @@
-name: Send a HTTP Request when new RSS item is detected - SimRacing Unlimited
+name: Send a HTTP Request when new RSS item is detected - vRacingnews ACC
 on:
   rss:
     url: https://vracingnews.de/index.php?article-feed/77/
