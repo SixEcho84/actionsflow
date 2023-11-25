@@ -1,0 +1,25 @@
+name: Send a HTTP Request when new RSS item is detected - vRacingnews AC 2
+on:
+  rss:
+    url: https://vracingnews.de/index.php?article-feed/91/
+    config:
+      active: true
+      loglevel: debug
+      
+jobs:
+  request:
+    name: Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make a HTTP Request - RSS vRacingnews AC 2
+        uses: actionsflow/axios@main
+        with:
+          url: ${{secrets.WEBHOOK_SIXECHO_RIBTECH_TEST}}
+          method: POST
+          body: |
+            {
+              "username": "vRacingnews",
+              "avatar_url": "https://vracingnews.de/images/style-11/apple-touch-icon.png",
+              "content": "**<<<${{on.rss.outputs.title}}>>>**\n<<<${{on.rss.outputs.link}}>>>"
+              
+            }
