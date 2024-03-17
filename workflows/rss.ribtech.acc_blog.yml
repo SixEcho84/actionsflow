@@ -6,7 +6,7 @@ on:
       loglevel: debug
       
 jobs:
-  request:0
+  request:
     name: Request
     runs-on: ubuntu-latest
     steps:
